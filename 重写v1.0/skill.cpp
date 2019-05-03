@@ -1,10 +1,10 @@
 #include "skill.h"
 #include"entity.h"
 
-enum skillType { Attack, Defence, Treat, Other };
+vector<skill>playerSkill;
 
-skill::skill(string & Name, ST Type, int Val, int Energy, void(*Effect)())
-	:name(Name), type(Type), energy(Energy), effect(Effect)
+skill::skill(const char* Name, ST Type, int Val, int Energy, void(*Effect)())
+	:name(string(Name)), type(Type), energy(Energy), effect(Effect)
 {
 	switch (type) {
 		case Attack:
@@ -19,6 +19,7 @@ skill::skill(string & Name, ST Type, int Val, int Energy, void(*Effect)())
 			value.atk = 0;
 			break;
 	}
+	playerSkill.push_back(*this);
 }
 
 const string & skill::Name() const
@@ -44,19 +45,22 @@ const string & skill::Type() const
 	}
 }
 
-int skill::Atk() const
+int skill::Value() const
 {
-	return value.atk;
-}
-
-int skill::Def() const
-{
-	return value.def;
-}
-
-int skill::Trt() const
-{
-	return value.treat;
+	switch (type) {
+		case Attack:
+			return value.atk;
+			break;
+		case Defence:
+			return value.def;
+			break;
+		case Treat:
+			return value.def;
+			break;
+		case Other:
+			return 0;
+			break;
+	}
 }
 
 int skill::Energy() const

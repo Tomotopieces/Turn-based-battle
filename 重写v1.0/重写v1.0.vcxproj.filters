@@ -28,6 +28,9 @@
     <Filter Include="基础功能">
       <UniqueIdentifier>{dface694-03d8-407f-8662-36bb435d1e03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="技能">
+      <UniqueIdentifier>{ce91aa0d-4051-43ec-8599-2426461fe110}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -49,7 +52,10 @@
       <Filter>基础功能</Filter>
     </ClCompile>
     <ClCompile Include="skill.cpp">
-      <Filter>源文件</Filter>
+      <Filter>技能</Filter>
+    </ClCompile>
+    <ClCompile Include="skillList.cpp">
+      <Filter>技能</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,7 +78,13 @@
       <Filter>基础功能</Filter>
     </ClInclude>
     <ClInclude Include="skill.h">
-      <Filter>战斗函数</Filter>
+      <Filter>技能</Filter>
+    </ClInclude>
+    <ClInclude Include="skillList.h">
+      <Filter>技能</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>装备/道具</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

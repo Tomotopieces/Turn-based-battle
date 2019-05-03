@@ -1,7 +1,8 @@
 #pragma once
 #include"header.h"
 
-typedef enum skillType ST;
+typedef enum skillType { Attack, Defence, Treat, Other }ST;
+
 class skill
 {
 private:
@@ -17,7 +18,7 @@ private:
 
 	explicit skill();
 public:
-	skill(string&Name, ST Type, int Val, int Energy, void(*Effect)());
+	skill(const char*Name, ST Type, int Val, int Energy, void(*Effect)());
 
 	/******************************************/
 
@@ -27,14 +28,8 @@ public:
 	/* 显示技能类型 */
 	const string&Type()const;
 
-	/* 显示伤害 */
-	int Atk()const;
-
-	/* 显示格挡 */
-	int Def()const;
-
-	/* 显示治疗值 */
-	int Trt()const;
+	/* 显示value */
+	int Value()const;
 
 	/* 显示消耗能量 */
 	int Energy()const;
@@ -44,3 +39,5 @@ public:
 	/* 使用技能 */
 	bool use()const;
 };
+
+extern vector<skill>playerSkill;

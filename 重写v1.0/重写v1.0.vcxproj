@@ -89,7 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>false</ConformanceMode>
+      <ConformanceMode>true</ConformanceMode>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -121,6 +121,7 @@
     <ClCompile Include="GameFeature.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="skill.cpp" />
+    <ClCompile Include="skillList.cpp" />
     <ClCompile Include="SysFeature.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +130,9 @@
     <ClInclude Include="entity.h" />
     <ClInclude Include="GameFeature.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="item.h" />
     <ClInclude Include="skill.h" />
+    <ClInclude Include="skillList.h" />
     <ClInclude Include="SysFeature.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,6 +1,6 @@
 #include "entity.h"
 
-enum buff { Normal, OnFire, Undefeatable, CantTreat };
+enum buff { Normal, OnFire, Undefeatable, CantTreat, Wound };
 
 entity & entity::operator=(const entity & copy)
 {
@@ -78,15 +78,15 @@ int entity::Mp_c() const
 	return mp_c;
 }
 
-entity & entity::updAtk(const int inc)
+entity & entity::updAtk(const int val)
 {
-	atk += inc;
+	atk = val;
 	return *this;
 }
 
-entity & entity::updAtk_c(const int inc)
+entity & entity::updAtk_c(const int val)
 {
-	atk_c += inc;
+	atk_c = val;
 	return *this;
 }
 
@@ -100,15 +100,21 @@ int entity::Atk_c() const
 	return atk_c;
 }
 
-entity & entity::updDef(const int inc)
+entity & entity::updDef(const int val)
 {
-	def += inc;
+	def = val;
 	return*this;
 }
 
-entity & entity::updDef_c(const int inc)
+entity & entity::updDef_c(const int val)
 {
-	def_c += inc;
+	def_c = val;
+	return*this;
+}
+
+entity & entity::updBlk_c(const int val)
+{
+	block = val;
 	return*this;
 }
 
@@ -131,6 +137,48 @@ int entity::Def_c() const
 int entity::Blk_c() const
 {
 	return block;
+}
+
+entity & entity::GetBuff(buff name, int level)
+{
+	buffList.push_back({ name,level });
+	return*this;
+}
+
+entity & entity::updBuffList_endTurn()
+{
+	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
+		switch (it->name) {
+			//着火
+			case OnFire:
+				it->level--;
+				break;
+			default:
+				break;
+		}
+	}
+	return*this;
+}
+
+entity & entity::updBuffList_endAction()
+{
+	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
+		switch (it->name) {
+			//伤口
+			case Wound:
+				//0.1概率伤口爆发
+				if (rand() % 5)
+					it->level++;
+				else
+					player.updHp_c(player.Hp_c() - it->level);
+				buffList.erase(it);
+				it--;
+				break;
+			default:
+				break;
+		}
+	}
+	return*this;
 }
 
 entity & entity::updCoin(const int inc)
@@ -182,12 +230,14 @@ const string & entity::Img() const
 
 /******************************************/
 
+//原型机
 entity proto
 { "NULL",20,0,1,1,10,1,0,
 "     ╱ ╲     ╱ ╲n     ╲   ╲ ╱ ╱ ╱n     ╱ ╲ ╱ ╲ ╱n   ╱╱    ╲ ╱ ╲n ╱╱        ╲   ╲n││         ╱ ╲ ╱n││       ╱n││     ╱n││   ╱n││ ╱n│╱n"
 };
 entity player = proto;
 
+//敌人
 entity enemys[]
 {
 	{ "魔王",50,0,3,2,50,99,100,

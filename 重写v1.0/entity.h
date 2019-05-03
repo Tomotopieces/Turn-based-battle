@@ -7,12 +7,6 @@ enum buff;
 class entity
 {
 private:
-	template<typename T>
-	struct List
-	{
-		T data;
-		List*next = nullptr;
-	};
 	string name;		//名字啦
 
 	int hp;				//固有生命值
@@ -24,7 +18,12 @@ private:
 	int def;			//固有防御力
 	int def_c = 0;		//当前防御力
 	int block = 0;		//格挡值
-	List<buff>buffList;	//状态表
+	struct Buff
+	{
+		buff name;
+		int level;
+	};
+	vector<Buff>buffList;	//buff表
 
 	int coin;			//金币
 	int lvl;			//等级
@@ -94,10 +93,10 @@ public:
 	/******************************************/
 
 	/* 更新固有攻击力 */
-	entity&updAtk(const int inc);
+	entity&updAtk(const int val);
 
 	/* 更新当前攻击力 */		//一般是嗑药或者技能产生的buff
-	entity&updAtk_c(const int inc);
+	entity&updAtk_c(const int val);
 
 	/* 显示固有攻击力 + 武器攻击力 */
 	int Atk()const;
@@ -108,10 +107,13 @@ public:
 	/******************************************/
 
 	/* 更新固有防御力 */
-	entity&updDef(const int inc);
+	entity&updDef(const int val);
 
 	/* 更新当前防御力 */
-	entity&updDef_c(const int inc);
+	entity&updDef_c(const int val);
+
+	/* 更新当前格挡值 */
+	entity&updBlk_c(const int val);
 
 	/* 清空防御 */
 	entity&ClrBlk();
@@ -124,6 +126,17 @@ public:
 
 	/* 显示格挡值 */
 	int Blk_c()const;
+
+	/******************************************/
+
+	/* 获得buff */
+	entity&GetBuff(buff name, int level);
+
+	/* 回合结束时更新buff表 */
+	entity&updBuffList_endTurn();
+
+	/* 一次行动结束时更新buff表 */
+	entity&updBuffList_endAction();
 
 	/******************************************/
 
