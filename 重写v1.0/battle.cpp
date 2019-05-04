@@ -51,9 +51,9 @@ void BattleUI::initBattleUI()
 	Cursor.set(100, 2);
 	cout << enemy.Name();
 	Cursor.set(8, 3);
-	cout << "HP: "; cout.width(2); cout << player.Hp_c() << "/" << player.Hp();
+	cout << "HP: "; cout.width(2); cout << player.CurrentHp() << "/" << player.Hp();
 	Cursor.set(100, 3);
-	cout.width(11); cout << "HP: "; cout.width(2); cout << enemy.Hp_c() << "/" << enemy.Hp();
+	cout.width(11); cout << "HP: "; cout.width(2); cout << enemy.CurrentHp() << "/" << enemy.Hp();
 	printEntity(player, 16, 8);
 	printEntity(enemy, 85, 8);
 	printBox();

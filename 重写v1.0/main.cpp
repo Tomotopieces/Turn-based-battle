@@ -89,7 +89,7 @@ void shop() {
 //升级判定
 void expJudge() {
 	while (player.Exp() >= player.MaxExp()) {
-		player.updExp(-1 * player.MaxExp());
+		player.updateExp(-1 * player.MaxExp());
 		player.lvlUp();
 		system("cls");
 		system("mode con cols=60 lines=15");
@@ -98,15 +98,15 @@ void expJudge() {
 		cout << "\t";
 		switch (select(3)) {
 			case 1: {
-				player.updAtk(1);
+				player.updateAtk(1);
 				break;
 			}
 			case 2: {
-				player.updDef(1);
+				player.updateDef(1);
 				break;
 			}
 			case 3: {
-				player.updCoin(player.Lvl() * 20);
+				player.updateCoin(player.Lvl() * 20);
 				break;
 			}
 		}
@@ -173,11 +173,11 @@ void battle() {
 		system("cls");
 		cout << "\n\n\t\t" << enemy.Name() << endl;
 		cout << "\t\tLV." << enemy.Lvl() << endl;
-		cout << "\n\t生命:" << enemy.Hp_c() << "\t攻击:" << enemy.Atk_c() << "\t格挡:" << enemy.Blk_c() << endl;
+		cout << "\n\t生命:" << enemy.CurrentHp() << "\t攻击:" << enemy.CurrentAtk() << "\t格挡:" << enemy.CurrentBlock() << endl;
 		cout << endl;
 		cout << player.Img() << endl;
 		cout << "\n\n\t" << player.Name() << "\tLV." << player.Lvl() << endl;
-		cout << "\n\t生命:" << player.Hp_c() << "\t攻击:" << player.Atk_c() << "\t格挡:" << player.Blk_c() << endl << endl;
+		cout << "\n\t生命:" << player.CurrentHp() << "\t攻击:" << player.CurrentAtk() << "\t格挡:" << player.CurrentBlock() << endl << endl;
 		cout << "--------------------------------------" << endl;
 		cout << "--------------------------------------" << endl;
 		cout << "\n\t1.攻击\t2.防御\t3.逃跑" << endl;
@@ -199,14 +199,14 @@ void battle() {
 			Sleep(1000);
 			turn = 1;
 		}
-		if (enemy.Hp_c() <= 0 || player.Hp_c() <= 0 || sel == 3)break;
+		if (enemy.CurrentHp() <= 0 || player.CurrentHp() <= 0 || sel == 3)break;
 	};
-	if (player.Hp_c() <= 0)result = 0;
+	if (player.CurrentHp() <= 0)result = 0;
 	if (result) {
 		cout << "\t你打败了" << enemy.Name() << "!" << endl;
-		player.updExp(enemy.Exp());
+		player.updateExp(enemy.Exp());
 		cout << "\t获得了" << enemy.Coin() << "金币!" << endl;
-		player.updCoin(enemy.Coin());
+		player.updateCoin(enemy.Coin());
 		expJudge();
 	}
 	else cout << "\t你败在了" << enemy.Name() << "的手下!" << endl;

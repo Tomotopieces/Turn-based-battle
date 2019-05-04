@@ -119,6 +119,7 @@
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="GameFeature.cpp" />
+    <ClCompile Include="item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="skill.cpp" />
     <ClCompile Include="skillList.cpp" />

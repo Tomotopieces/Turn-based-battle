@@ -4,6 +4,8 @@ enum buff { Normal, OnFire, Undefeatable, CantTreat, Wound };
 
 entity & entity::operator=(const entity & copy)
 {
+	if (&copy == this)
+		return*this;
 	name = copy.name;
 	hp = copy.hp;
 	atk = copy.atk;
@@ -28,21 +30,21 @@ entity & entity::Rename(const string & Name)
 
 entity & entity::Init()
 {
-	hp_c = hp;
-	atk_c = atk/* + weapon.atk */;
-	block = 0;
+	currentHp = hp;
+	currentAtk = atk/* + weapon.atk */;
+	currentBlock = 0;
 	return*this;
 }
 
-entity & entity::updHp(const int val)
+entity & entity::updateHp(const int val)
 {
 	hp = val;
 	return *this;
 }
 
-entity & entity::updHp_c(const int val)
+entity & entity::updateCurrentHp(const int val)
 {
-	hp_c = val;
+	currentHp = val;
 	return *this;
 }
 
@@ -51,20 +53,20 @@ int entity::Hp() const
 	return hp;
 }
 
-int entity::Hp_c() const
+int entity::CurrentHp() const
 {
-	return hp_c;
+	return currentHp;
 }
 
-entity & entity::updMp(const int val)
+entity & entity::updateMp(const int val)
 {
 	mp = val;
 	return *this;
 }
 
-entity & entity::updMp_c(const int val)
+entity & entity::updateCurrentMp(const int val)
 {
-	mp_c = val;
+	currentMp = val;
 	return *this;
 }
 
@@ -73,20 +75,20 @@ int entity::Mp() const
 	return mp;
 }
 
-int entity::Mp_c() const
+int entity::CurrentMp() const
 {
-	return mp_c;
+	return currentMp;
 }
 
-entity & entity::updAtk(const int val)
+entity & entity::updateAtk(const int val)
 {
 	atk = val;
 	return *this;
 }
 
-entity & entity::updAtk_c(const int val)
+entity & entity::updateCurrentAtk(const int val)
 {
-	atk_c = val;
+	currentAtk = val;
 	return *this;
 }
 
@@ -95,32 +97,32 @@ int entity::Atk() const
 	return atk;
 }
 
-int entity::Atk_c() const
+int entity::CurrentAtk() const
 {
-	return atk_c;
+	return currentAtk;
 }
 
-entity & entity::updDef(const int val)
+entity & entity::updateDef(const int val)
 {
 	def = val;
 	return*this;
 }
 
-entity & entity::updDef_c(const int val)
+entity & entity::updateCurrentDef(const int val)
 {
-	def_c = val;
+	currentDef = val;
 	return*this;
 }
 
-entity & entity::updBlk_c(const int val)
+entity & entity::updateCurrentBlock(const int val)
 {
-	block = val;
+	currentBlock = val;
 	return*this;
 }
 
 entity & entity::ClrBlk()
 {
-	block = 0;
+	currentBlock = 0;
 	return*this;
 }
 
@@ -129,14 +131,14 @@ int entity::Def() const
 	return def;
 }
 
-int entity::Def_c() const
+int entity::CurrentDef() const
 {
-	return def_c;
+	return currentDef;
 }
 
-int entity::Blk_c() const
+int entity::CurrentBlock() const
 {
-	return block;
+	return currentBlock;
 }
 
 entity & entity::GetBuff(buff name, int level)
@@ -145,7 +147,7 @@ entity & entity::GetBuff(buff name, int level)
 	return*this;
 }
 
-entity & entity::updBuffList_endTurn()
+entity & entity::updateBuffList_endTurn()
 {
 	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
 		switch (it->name) {
@@ -160,7 +162,7 @@ entity & entity::updBuffList_endTurn()
 	return*this;
 }
 
-entity & entity::updBuffList_endAction()
+entity & entity::updateBuffList_endAction()
 {
 	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
 		switch (it->name) {
@@ -170,7 +172,7 @@ entity & entity::updBuffList_endAction()
 				if (rand() % 5)
 					it->level++;
 				else
-					player.updHp_c(player.Hp_c() - it->level);
+					player.updateCurrentHp(player.CurrentHp() - it->level);
 				buffList.erase(it);
 				it--;
 				break;
@@ -181,7 +183,7 @@ entity & entity::updBuffList_endAction()
 	return*this;
 }
 
-entity & entity::updCoin(const int inc)
+entity & entity::updateCoin(const int inc)
 {
 	coin += inc;
 	return*this;
@@ -192,7 +194,7 @@ int entity::Coin() const
 	return coin;
 }
 
-entity & entity::updExp(const int val)
+entity & entity::updateExp(const int val)
 {
 	exp = val;
 	return*this;

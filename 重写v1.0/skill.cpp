@@ -70,9 +70,9 @@ int skill::Energy() const
 
 bool skill::use()const
 {
-	if (player.Mp_c() < energy)
+	if (player.CurrentMp() < energy)
 		return false;
-	player.updMp_c(player.Mp_c() - energy);
+	player.updateCurrentMp(player.CurrentMp() - energy);
 	effect();
 	return true;
 }

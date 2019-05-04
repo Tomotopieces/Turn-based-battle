@@ -57,6 +57,9 @@
     <ClCompile Include="skillList.cpp">
       <Filter>技能</Filter>
     </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>装备/道具</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h">

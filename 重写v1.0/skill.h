@@ -19,19 +19,20 @@ private:
 	explicit skill();
 public:
 	skill(const char*Name, ST Type, int Val, int Energy, void(*Effect)());
+	~skill() = default;
 
 	/******************************************/
 
-	/* 显示技能名 */
+	/* 返回技能名 */
 	const string&Name()const;
 
-	/* 显示技能类型 */
+	/* 返回技能类型 */
 	const string&Type()const;
 
-	/* 显示value */
+	/* 返回value */
 	int Value()const;
 
-	/* 显示消耗能量 */
+	/* 返回消耗能量 */
 	int Energy()const;
 
 	/******************************************/

@@ -3,25 +3,25 @@
 
 void HIT()
 {
-	if (player.Atk_c() >= enemy.Blk_c())
-		enemy.updHp_c(enemy.Hp_c() + enemy.Blk_c() - player.Atk_c());
+	if (player.CurrentAtk() >= enemy.CurrentBlock())
+		enemy.updateCurrentHp(enemy.CurrentHp() + enemy.CurrentBlock() - player.CurrentAtk());
 }
 
 void BLOCK()
 {
-	player.updBlk_c(player.Def_c());
+	player.updateCurrentBlock(player.CurrentDef());
 }
 
 void FIREBALL()
 {
-	player.updAtk_c(player.Atk_c() + FireBall.Value());
+	player.updateCurrentAtk(player.CurrentAtk() + FireBall.Value());
 	HIT();
-	player.updAtk_c(player.Atk_c() - FireBall.Value());
+	player.updateCurrentAtk(player.CurrentAtk() - FireBall.Value());
 }
 
 void FIREWALL()
 {
-	player.updDef_c(player.Def_c() + FireWall.Value());
+	player.updateCurrentDef(player.CurrentDef() + FireWall.Value());
 	BLOCK();
-	player.updDef_c(player.Def_c() - FireWall.Value());
+	player.updateCurrentDef(player.CurrentDef() - FireWall.Value());
 }
