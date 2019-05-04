@@ -60,6 +60,9 @@
     <ClCompile Include="item.cpp">
       <Filter>装备/道具</Filter>
     </ClCompile>
+    <ClCompile Include="itemList.cpp">
+      <Filter>装备/道具</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h">
@@ -87,6 +90,9 @@
       <Filter>技能</Filter>
     </ClInclude>
     <ClInclude Include="item.h">
+      <Filter>装备/道具</Filter>
+    </ClInclude>
+    <ClInclude Include="itemList.h">
       <Filter>装备/道具</Filter>
     </ClInclude>
   </ItemGroup>

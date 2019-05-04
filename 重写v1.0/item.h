@@ -11,15 +11,15 @@ private:
 
 	explicit item();
 public:
-
-	item(const string&Name, const bool Stackable, void(*Effect)(), bool(*Condition)())
-		:name(Name), stackable(Stackable), effect(Effect)
+	item(const string&Name, const bool Stackable, bool(*Condition)(), void(*Effect)())
+		:name(Name), stackable(Stackable), effect(Effect),condition(Condition)
 	{
 	}
 	~item() = default;
 
 	/* 返回名字 */
 	const string&Name()const;
+
 	/* 返回是否可叠加 */
 	bool Stackable()const;
 

@@ -120,6 +120,7 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="GameFeature.cpp" />
     <ClCompile Include="item.cpp" />
+    <ClCompile Include="itemList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="skill.cpp" />
     <ClCompile Include="skillList.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="GameFeature.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="item.h" />
+    <ClInclude Include="itemList.h" />
     <ClInclude Include="skill.h" />
     <ClInclude Include="skillList.h" />
     <ClInclude Include="SysFeature.h" />

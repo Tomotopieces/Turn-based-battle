@@ -1,7 +1,7 @@
 #pragma once
 #include"header.h"
 
-enum buff;
+enum buff { Normal, OnFire, Undefeatable, CantTreat, Wound };
 
 /* 单位 */
 class entity
@@ -137,6 +137,9 @@ public:
 
 	/* 一次行动结束时更新buff表 */
 	entity&updateBuffList_endAction();
+
+	/* 检索buff */
+	bool findBuff(buff name)const;
 
 	/******************************************/
 

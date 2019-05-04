@@ -1,6 +1,6 @@
 #include "entity.h"
 
-enum buff { Normal, OnFire, Undefeatable, CantTreat, Wound };
+
 
 entity & entity::operator=(const entity & copy)
 {
@@ -181,6 +181,15 @@ entity & entity::updateBuffList_endAction()
 		}
 	}
 	return*this;
+}
+
+bool entity::findBuff(buff name) const
+{
+	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
+		if (name == it->name)
+			return true;
+	}
+	return false;
 }
 
 entity & entity::updateCoin(const int inc)
