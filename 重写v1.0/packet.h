@@ -1,14 +1,15 @@
 #pragma once
 #include"header.h"
-#include"itemList.h"
+#include"item.h"
 
+/* 背包 */
 class Packet
 {
 public:
 	struct block			//背包格
 	{
-		Item item = Empty;
-		unsigned int quantity = 0;
+		Item item;
+		unsigned int quantity;
 
 		bool use();
 	};
@@ -33,3 +34,10 @@ public:
 };
 
 extern Packet packet;
+
+/* 装备槽 */
+class Slot
+{
+private:
+
+};

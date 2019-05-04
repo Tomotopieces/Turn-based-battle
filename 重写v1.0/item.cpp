@@ -2,7 +2,7 @@
 
 Item & Item::operator=(const Item & copy)
 {
-	if (this == &copy)
+	if (&copy == this)
 		return*this;
 	name = copy.name;
 	stackable = copy.stackable;

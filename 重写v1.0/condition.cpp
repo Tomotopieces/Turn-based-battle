@@ -8,8 +8,10 @@ bool NOCONDITION()
 
 bool CANTREAT()
 {
-	if (player.findBuff(CantTreat))
-		return false;
-	else
-		return true;
+	return !player.findBuff(CantTreat);
+}
+
+bool LEASTLEVEL(int n)
+{
+	return player.Lvl() >= n;
 }

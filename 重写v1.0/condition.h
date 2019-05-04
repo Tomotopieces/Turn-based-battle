@@ -10,3 +10,6 @@ bool CANTREAT();
 
 /* 正在使用剑类武器 */
 bool USINGSWORD();
+
+/* 达到等级n */
+bool LEASTLEVEL(int n);

@@ -37,16 +37,13 @@ public:
 	entity(const string&Name, const int Hp, const int Mp, const int Atk, const int Def, const int Coin, const int Lvl, const int Exp, const string Img)
 		:name(Name), hp(Hp), atk(Atk), def(Def), coin(Coin), lvl(Lvl), exp(Exp), img(Img)
 	{}
-
 	/* 创建相同面板不同名字的单位 */		//用于多存档与相似敌人
 	entity(const string&Name, const entity&copy)
 		:name(Name), hp(copy.hp), atk(copy.atk), def(copy.def), coin(copy.coin), lvl(copy.lvl), exp(copy.exp), img(copy.img)
 	{}
-
 	entity(const entity&copy)
 		:name(copy.name), hp(copy.hp), atk(copy.atk), def(copy.def), coin(copy.coin), lvl(copy.lvl), exp(copy.exp), img(copy.img)
 	{}
-
 	~entity() = default;
 
 	entity&operator=(const entity&copy);

@@ -1,8 +1,6 @@
 #include"skill.h"
 #include"entityList.h"
 
-vector<Skill>playerSkill;
-
 Skill::Skill(const char* Name, ST Type, int Val, int Energy, bool(*Condition)(), void(*Effect)())
 	:name(string(Name)), type(Type), energy(Energy), condition(Condition), effect(Effect)
 {
@@ -14,12 +12,43 @@ Skill::Skill(const char* Name, ST Type, int Val, int Energy, bool(*Condition)(),
 			value.def = Val;
 			break;
 		case Treat:
-			value.treat = Val;			break;
+			value.treat = Val;
+			break;
 		case Other:
 			value.atk = 0;
 			break;
 	}
-	playerSkill.push_back(*this);
+}
+
+Skill::Skill(const Skill & copy)
+	:name(copy.name), type(copy.type), energy(copy.energy), condition(copy.condition), effect(copy.effect)
+{
+	switch (type) {
+		case Attack:
+			value.atk = copy.value.atk;
+			break;
+		case Defence:
+			value.def = copy.value.def;
+			break;
+		case Treat:
+			value.treat = copy.value.treat;
+			break;
+		case Other:
+			value.atk = 0;
+			break;
+	}
+}
+
+Skill & Skill::operator=(const Skill & copy)
+{
+	if (&copy == this)
+		return*this;
+	name = copy.name;
+	type = copy.type;
+	energy = copy.energy;
+	condition = copy.condition;
+	effect = copy.effect;
+	return*this;
 }
 
 const string & Skill::Name() const
@@ -42,6 +71,9 @@ const string & Skill::Type() const
 		case Other:
 			return "特殊型";
 			break;
+		default:
+			return "特殊型";
+			break;
 	}
 }
 
@@ -58,6 +90,9 @@ int Skill::Value() const
 			return value.def;
 			break;
 		case Other:
+			return 0;
+			break;
+		default:
 			return 0;
 			break;
 	}

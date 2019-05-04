@@ -25,3 +25,22 @@ void FIREWALL()
 	BLOCK();
 	player.updateCurrentDef(player.CurrentDef() - FireWall.Value());
 }
+
+/******************************************/
+//Î´Íê³É
+
+void FIRESLASH()
+{
+}
+
+void FLAMEFANCING()
+{
+}
+
+void HEARTFIRE()
+{
+}
+
+void IMMORTALFIRE()
+{
+}

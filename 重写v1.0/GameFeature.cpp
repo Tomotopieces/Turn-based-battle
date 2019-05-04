@@ -2,7 +2,7 @@
 #include"BaseFeature.h"
 #include"GameFeature.h"
 #include"battle.h"
-#include"entity.h"
+#include"entityList.h"
 
 void startup()
 {

@@ -1,4 +1,6 @@
 #include "packet.h"
+#include"itemList.h"
+
 Packet packet;
 
 void Packet::sortPacket()
@@ -14,7 +16,7 @@ void Packet::sortPacket()
 
 Packet::Packet()
 {
-	blocks.resize(20);
+	blocks.resize(20, { Empty,0 });
 }
 
 const Packet::block & Packet::operator[](int n)
@@ -93,5 +95,7 @@ bool Packet::block::use()
 		if (0 == quantity) {
 			packet.sortPacket();
 		}
+		return true;
 	}
+	return false;
 }

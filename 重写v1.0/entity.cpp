@@ -1,4 +1,5 @@
 #include "entity.h"
+#include"entityList.h"
 
 entity & entity::operator=(const entity & copy)
 {

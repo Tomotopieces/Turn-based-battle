@@ -1,6 +1,7 @@
 #pragma once
 #include"header.h"
 
+/* 道具 */
 class Item
 {
 private:
@@ -15,10 +16,15 @@ public:
 		:name(Name), stackable(Stackable), effect(Effect),condition(Condition)
 	{
 	}
+	Item(const Item&copy)
+		:name(copy.name), stackable(copy.stackable), effect(copy.effect), condition(copy.condition)
+	{
+	}
 	~Item() = default;
 
-	/* 复制物品 */
 	Item&operator=(const Item&copy);
+
+	/******************************************/
 
 	/* 对比物品 */
 	bool operator==(const Item&opponent);

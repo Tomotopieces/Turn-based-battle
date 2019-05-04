@@ -119,6 +119,8 @@
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="condition.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="entityList.cpp" />
+    <ClCompile Include="equipment.cpp" />
     <ClCompile Include="GameFeature.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="itemList.cpp" />
@@ -134,6 +136,7 @@
     <ClInclude Include="condition.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="entityList.h" />
+    <ClInclude Include="equipment.h" />
     <ClInclude Include="GameFeature.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="item.h" />

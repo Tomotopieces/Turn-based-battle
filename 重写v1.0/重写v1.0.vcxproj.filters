@@ -75,6 +75,12 @@
     <ClCompile Include="condition.cpp">
       <Filter>条件总汇</Filter>
     </ClCompile>
+    <ClCompile Include="equipment.cpp">
+      <Filter>道具</Filter>
+    </ClCompile>
+    <ClCompile Include="entityList.cpp">
+      <Filter>实体类</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h">
@@ -115,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="condition.h">
       <Filter>条件总汇</Filter>
+    </ClInclude>
+    <ClInclude Include="equipment.h">
+      <Filter>道具</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

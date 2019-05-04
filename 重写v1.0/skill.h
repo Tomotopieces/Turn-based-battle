@@ -1,6 +1,7 @@
 #pragma once
 #include"header.h"
 
+/* 技能类别 */
 typedef enum skillType { Attack, Defence, Treat, Other }ST;
 
 class Skill
@@ -14,7 +15,7 @@ private:
 		int treat;			//治疗值
 	}value;
 	int energy;			//消耗能量
-	void(*effect)();	//特殊效果
+	void(*effect)();	//效果
 
 
 	bool(*condition)();		//使用条件		比如用过弱水三千后无法使用治疗类技能
@@ -23,7 +24,9 @@ private:
 	explicit Skill();
 public:
 	Skill(const char*Name, ST Type, int Val, int Energy, bool(*Condition)(), void(*Effect)());
+	Skill(const Skill&copy);
 	~Skill() = default;
+	Skill&operator=(const Skill&copy);
 
 	/******************************************/
 
@@ -47,5 +50,3 @@ public:
 	/* 使用技能 */
 	bool use()const;
 };
-
-extern vector<Skill>playerSkill;

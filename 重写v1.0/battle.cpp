@@ -1,6 +1,6 @@
 #include "battle.h"
 #include"BaseFeature.h"
-#include"entity.h"
+#include"entityList.h"
 
 void BattleUI::printEntity(const entity & unit, int x, int y)
 {

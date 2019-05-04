@@ -1,5 +1,5 @@
 #include "itemList.h"
-#include"entity.h"
+#include"entityList.h"
 
 void NOEFFECT()
 {
