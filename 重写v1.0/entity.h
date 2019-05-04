@@ -1,7 +1,7 @@
 #pragma once
 #include"header.h"
 
-enum buff { Normal, OnFire, Undefeatable, CantTreat, Wound };
+enum buff { Normal, OnFire, Undefeatable, CantTreat, Wound };//似乎不能用写在cpp里然后在这里extern的做法
 
 /* 单位 */
 class entity
@@ -133,10 +133,10 @@ public:
 	entity&GetBuff(buff name, int level);
 
 	/* 回合结束时更新buff表 */
-	entity&updateBuffList_endTurn();
+	entity&updateBuffListOnTurnEnd();
 
 	/* 一次行动结束时更新buff表 */
-	entity&updateBuffList_endAction();
+	entity&updateBuffListOnActionEnd();
 
 	/* 检索buff */
 	bool findBuff(buff name)const;

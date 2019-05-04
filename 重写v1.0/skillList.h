@@ -2,25 +2,25 @@
 #include"skill.h"
 
 void HIT();
-skill hit("击打", Attack, 0, 0, HIT);
+Skill hit("击打", Attack, 0, 0, HIT);
 
 void BLOCK();
-skill blk("防御", Defence, 0, 0, BLOCK);
+Skill blk("防御", Defence, 0, 0, BLOCK);
 
 void FIREBALL();
-skill FireBall("火球术", Attack, 1, 1, FIREBALL);
+Skill FireBall("火球术", Attack, 1, 1, FIREBALL);
 
 void FIREWALL();
-skill FireWall("火焰屏障", Defence, 1, 1, FIREWALL);
+Skill FireWall("火焰屏障", Defence, 1, 1, FIREWALL);
 
 void FIRESLASH();
-skill FireSlash("火焰斩击", Attack, 2, 2, FIRESLASH);
+Skill FireSlash("火焰斩击", Attack, 2, 2, FIRESLASH);
 
 void FLAMEFANCING();
-skill FlameFancing("烈火剑法", Attack, 5, 3, FLAMEFANCING);
+Skill FlameFancing("烈火剑法", Attack, 5, 3, FLAMEFANCING);
 
 void HEARTFIRE();
-skill HeartFire("攻心火", Other, 0, 5, HEARTFIRE);
+Skill HeartFire("攻心火", Other, 0, 5, HEARTFIRE);
 
 void IMMORTALFIRE();
-skill ImmortalFire("真火三昧", Attack, 15, 8, IMMORTALFIRE);
+Skill ImmortalFire("真火三昧", Attack, 15, 8, IMMORTALFIRE);

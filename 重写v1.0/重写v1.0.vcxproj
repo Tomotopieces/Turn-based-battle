@@ -122,6 +122,7 @@
     <ClCompile Include="item.cpp" />
     <ClCompile Include="itemList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="packet.cpp" />
     <ClCompile Include="skill.cpp" />
     <ClCompile Include="skillList.cpp" />
     <ClCompile Include="SysFeature.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="header.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="itemList.h" />
+    <ClInclude Include="packet.h" />
     <ClInclude Include="skill.h" />
     <ClInclude Include="skillList.h" />
     <ClInclude Include="SysFeature.h" />

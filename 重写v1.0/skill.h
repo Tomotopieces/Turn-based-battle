@@ -3,7 +3,7 @@
 
 typedef enum skillType { Attack, Defence, Treat, Other }ST;
 
-class skill
+class Skill
 {
 private:
 	string name;		//名
@@ -16,10 +16,10 @@ private:
 	int energy;			//消耗能量
 	void(*effect)();	//特殊效果
 
-	explicit skill();
+	explicit Skill();
 public:
-	skill(const char*Name, ST Type, int Val, int Energy, void(*Effect)());
-	~skill() = default;
+	Skill(const char*Name, ST Type, int Val, int Energy, void(*Effect)());
+	~Skill() = default;
 
 	/******************************************/
 
@@ -41,4 +41,4 @@ public:
 	bool use()const;
 };
 
-extern vector<skill>playerSkill;
+extern vector<Skill>playerSkill;

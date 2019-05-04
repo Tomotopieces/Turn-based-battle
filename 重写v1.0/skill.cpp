@@ -1,9 +1,9 @@
-#include "skill.h"
+#include"skill.h"
 #include"entity.h"
 
-vector<skill>playerSkill;
+vector<Skill>playerSkill;
 
-skill::skill(const char* Name, ST Type, int Val, int Energy, void(*Effect)())
+Skill::Skill(const char* Name, ST Type, int Val, int Energy, void(*Effect)())
 	:name(string(Name)), type(Type), energy(Energy), effect(Effect)
 {
 	switch (type) {
@@ -22,12 +22,12 @@ skill::skill(const char* Name, ST Type, int Val, int Energy, void(*Effect)())
 	playerSkill.push_back(*this);
 }
 
-const string & skill::Name() const
+const string & Skill::Name() const
 {
 	return name;
 }
 
-const string & skill::Type() const
+const string & Skill::Type() const
 {
 	switch (type) {
 		case Attack:
@@ -45,7 +45,7 @@ const string & skill::Type() const
 	}
 }
 
-int skill::Value() const
+int Skill::Value() const
 {
 	switch (type) {
 		case Attack:
@@ -63,12 +63,12 @@ int skill::Value() const
 	}
 }
 
-int skill::Energy() const
+int Skill::Energy() const
 {
 	return energy;
 }
 
-bool skill::use()const
+bool Skill::use()const
 {
 	if (player.CurrentMp() < energy)
 		return false;

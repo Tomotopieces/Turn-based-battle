@@ -6,6 +6,10 @@ bool NOCONDITION()
 	return true;
 }
 
+void NOEFFECT()
+{
+}
+
 bool CANTREAT()
 {
 	if (player.findBuff(CantTreat))

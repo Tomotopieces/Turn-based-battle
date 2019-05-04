@@ -1,6 +1,28 @@
 #include "entity.h"
 
+//原型机
+entity proto
+{ "NULL",20,0,1,1,10,1,0,
+"     ╱ ╲     ╱ ╲n     ╲   ╲ ╱ ╱ ╱n     ╱ ╲ ╱ ╲ ╱n   ╱╱    ╲ ╱ ╲n ╱╱        ╲   ╲n││         ╱ ╲ ╱n││       ╱n││     ╱n││   ╱n││ ╱n│╱n"
+};
+entity player = proto;
 
+//敌人
+entity enemys[]
+{
+	{ "魔王",50,0,3,2,50,99,100,
+	"│╲                       ╱│n│ │                     │ │n│ │      __      __     │ │n│  ╲ __╱   ╲ __╱   ╲ __╱  │n ╲ ____              ____╱n      │      ║      │n       ╲     ║     ╱n        │    ╬    │n         ╲   __  ╱n          │ │ │ │n           ╲│ │╱n"
+	},
+	{ "小偷",20,0,1,1,5,1,10,
+	"     ╱ ╲     ╱ ╲n     ╲   ╲ ╱ ╱ ╱n     ╱ ╲ ╱ ╲ ╱n   ╱╱    ╲ ╱ ╲n ╱╱        ╲   ╲n││         ╱ ╲ ╱n││       ╱n││     ╱n││   ╱n││ ╱n│╱n"
+	},
+	{"食堂泼辣酱",99,0,99,99,1000,999,1000,
+	"          __ n    __  __╲ ╲ n    ╲ ╲ ╲ ╲│ │╱│ __ n __│╲│ │ │    ╱  ╲ ╲ n ╲ ╲╲_╲ ╲│ │ │  _╱ ╱ n   ╲  ╲│  ╱  │╱  ╱ n    │──── []────│ n    │ ┗━━   ━━┛ │ n    │  ╘═   ═╛  │ n    │╲         ╱│ n    │ │   __  │ │ n     ╲ ╲ ____╱ ╱ n       ╲│ __│╱ n"
+	}
+};
+entity enemy = proto;
+
+/******************************************/
 
 entity & entity::operator=(const entity & copy)
 {
@@ -147,7 +169,7 @@ entity & entity::GetBuff(buff name, int level)
 	return*this;
 }
 
-entity & entity::updateBuffList_endTurn()
+entity & entity::updateBuffListOnTurnEnd()
 {
 	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
 		switch (it->name) {
@@ -162,7 +184,7 @@ entity & entity::updateBuffList_endTurn()
 	return*this;
 }
 
-entity & entity::updateBuffList_endAction()
+entity & entity::updateBuffListOnActionEnd()
 {
 	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
 		switch (it->name) {
@@ -238,27 +260,3 @@ const string & entity::Img() const
 {
 	return img;
 }
-
-/******************************************/
-
-//原型机
-entity proto
-{ "NULL",20,0,1,1,10,1,0,
-"     ╱ ╲     ╱ ╲n     ╲   ╲ ╱ ╱ ╱n     ╱ ╲ ╱ ╲ ╱n   ╱╱    ╲ ╱ ╲n ╱╱        ╲   ╲n││         ╱ ╲ ╱n││       ╱n││     ╱n││   ╱n││ ╱n│╱n"
-};
-entity player = proto;
-
-//敌人
-entity enemys[]
-{
-	{ "魔王",50,0,3,2,50,99,100,
-	"│╲                       ╱│n│ │                     │ │n│ │      __      __     │ │n│  ╲ __╱   ╲ __╱   ╲ __╱  │n ╲ ____              ____╱n      │      ║      │n       ╲     ║     ╱n        │    ╬    │n         ╲   __  ╱n          │ │ │ │n           ╲│ │╱n"
-	},
-	{ "小偷",20,0,1,1,5,1,10,
-	"     ╱ ╲     ╱ ╲n     ╲   ╲ ╱ ╱ ╱n     ╱ ╲ ╱ ╲ ╱n   ╱╱    ╲ ╱ ╲n ╱╱        ╲   ╲n││         ╱ ╲ ╱n││       ╱n││     ╱n││   ╱n││ ╱n│╱n"
-	},
-	{"食堂泼辣酱",99,0,99,99,1000,999,1000,
-	"          __ n    __  __╲ ╲ n    ╲ ╲ ╲ ╲│ │╱│ __ n __│╲│ │ │    ╱  ╲ ╲ n ╲ ╲╲_╲ ╲│ │ │  _╱ ╱ n   ╲  ╲│  ╱  │╱  ╱ n    │──── []────│ n    │ ┗━━   ━━┛ │ n    │  ╘═   ═╛  │ n    │╲         ╱│ n    │ │   __  │ │ n     ╲ ╲ ____╱ ╱ n       ╲│ __│╱ n"
-	}
-};
-entity enemy = proto;

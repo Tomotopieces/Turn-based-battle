@@ -1,14 +1,16 @@
 #pragma once
-#include"item.h"
+#include"Item.h"
 
 bool NOCONDITION();
+void NOEFFECT();
+Item Empty("", false, NOCONDITION, NOEFFECT);
 
 bool CANTREAT();//可以被治疗
 void LIFEPOTION();
-item LifePotion("生命药水", true, CANTREAT, LIFEPOTION);
+Item LifePotion("生命药水", true, CANTREAT, LIFEPOTION);
 
 void ENERGYPOTION();
-item EnergyPotion("能量药水", true, NOCONDITION, ENERGYPOTION);
+Item EnergyPotion("能量药水", true, NOCONDITION, ENERGYPOTION);
 
 void POWERPOTION();
-item PowerPotion("力量药水", true, NOCONDITION, ENERGYPOTION);
+Item PowerPotion("力量药水", true, NOCONDITION, ENERGYPOTION);
