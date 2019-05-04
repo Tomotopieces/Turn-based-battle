@@ -1,5 +1,5 @@
 #include"skillList.h"
-#include"entity.h"
+#include"entityList.h"
 
 void HIT()
 {

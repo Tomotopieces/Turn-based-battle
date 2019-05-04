@@ -1,10 +1,10 @@
 #include"skill.h"
-#include"entity.h"
+#include"entityList.h"
 
 vector<Skill>playerSkill;
 
-Skill::Skill(const char* Name, ST Type, int Val, int Energy, void(*Effect)())
-	:name(string(Name)), type(Type), energy(Energy), effect(Effect)
+Skill::Skill(const char* Name, ST Type, int Val, int Energy, bool(*Condition)(), void(*Effect)())
+	:name(string(Name)), type(Type), energy(Energy), condition(Condition), effect(Effect)
 {
 	switch (type) {
 		case Attack:
@@ -68,10 +68,15 @@ int Skill::Energy() const
 	return energy;
 }
 
+bool Skill::Usable() const
+{
+	return condition();//此处若返回false则为    无法使用    而不是使用失败
+}
+
 bool Skill::use()const
 {
 	if (player.CurrentMp() < energy)
-		return false;
+		return false;//此处为    使用失败    而不是无法使用
 	player.updateCurrentMp(player.CurrentMp() - energy);
 	effect();
 	return true;

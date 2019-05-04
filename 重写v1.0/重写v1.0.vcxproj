@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="BaseFeature.cpp" />
     <ClCompile Include="battle.cpp" />
+    <ClCompile Include="condition.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="GameFeature.cpp" />
     <ClCompile Include="item.cpp" />
@@ -130,7 +131,9 @@
   <ItemGroup>
     <ClInclude Include="BaseFeature.h" />
     <ClInclude Include="battle.h" />
+    <ClInclude Include="condition.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="entityList.h" />
     <ClInclude Include="GameFeature.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="item.h" />

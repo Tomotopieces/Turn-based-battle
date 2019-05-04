@@ -16,9 +16,13 @@ private:
 	int energy;			//消耗能量
 	void(*effect)();	//特殊效果
 
+
+	bool(*condition)();		//使用条件		比如用过弱水三千后无法使用治疗类技能
+	
+
 	explicit Skill();
 public:
-	Skill(const char*Name, ST Type, int Val, int Energy, void(*Effect)());
+	Skill(const char*Name, ST Type, int Val, int Energy, bool(*Condition)(), void(*Effect)());
 	~Skill() = default;
 
 	/******************************************/
@@ -36,6 +40,9 @@ public:
 	int Energy()const;
 
 	/******************************************/
+
+	/* 技能是否可用 */
+	bool Usable()const;
 
 	/* 使用技能 */
 	bool use()const;

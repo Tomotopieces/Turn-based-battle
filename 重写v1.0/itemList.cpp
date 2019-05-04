@@ -1,21 +1,8 @@
 #include "itemList.h"
 #include"entity.h"
 
-bool NOCONDITION()
-{
-	return true;
-}
-
 void NOEFFECT()
 {
-}
-
-bool CANTREAT()
-{
-	if (player.findBuff(CantTreat))
-		return false;
-	else
-		return true;
 }
 
 void LIFEPOTION()

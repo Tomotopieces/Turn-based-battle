@@ -193,8 +193,3 @@ public:
 	搞java和python的想跟你说，命名要么都驼峰，要么都下划线。混用看上去不舒服。
 	java里面的方法、变量名都有点长。
 */
-
-extern entity proto;
-extern entity player;
-extern entity enemys[];
-extern entity enemy;
