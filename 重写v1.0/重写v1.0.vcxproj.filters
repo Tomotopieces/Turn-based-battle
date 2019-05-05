@@ -28,13 +28,13 @@
     <Filter Include="技能">
       <UniqueIdentifier>{ce91aa0d-4051-43ec-8599-2426461fe110}</UniqueIdentifier>
     </Filter>
-    <Filter Include="道具">
+    <Filter Include="道具和装备">
       <UniqueIdentifier>{004fbfd1-1638-478a-a563-907ef347c947}</UniqueIdentifier>
     </Filter>
-    <Filter Include="背包">
+    <Filter Include="背包和装备栏">
       <UniqueIdentifier>{fd29ea94-37a8-45c6-a77c-3610fe1ad182}</UniqueIdentifier>
     </Filter>
-    <Filter Include="条件总汇">
+    <Filter Include="条件和部分效果">
       <UniqueIdentifier>{26a33d82-3125-4e1c-af7c-d6ce6b28c6d8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -64,22 +64,31 @@
       <Filter>技能</Filter>
     </ClCompile>
     <ClCompile Include="item.cpp">
-      <Filter>道具</Filter>
+      <Filter>道具和装备</Filter>
     </ClCompile>
     <ClCompile Include="itemList.cpp">
-      <Filter>道具</Filter>
+      <Filter>道具和装备</Filter>
     </ClCompile>
     <ClCompile Include="packet.cpp">
-      <Filter>背包</Filter>
-    </ClCompile>
-    <ClCompile Include="condition.cpp">
-      <Filter>条件总汇</Filter>
+      <Filter>背包和装备栏</Filter>
     </ClCompile>
     <ClCompile Include="equipment.cpp">
-      <Filter>道具</Filter>
+      <Filter>道具和装备</Filter>
     </ClCompile>
     <ClCompile Include="entityList.cpp">
       <Filter>实体类</Filter>
+    </ClCompile>
+    <ClCompile Include="Slot.cpp">
+      <Filter>背包和装备栏</Filter>
+    </ClCompile>
+    <ClCompile Include="condition.cpp">
+      <Filter>条件和部分效果</Filter>
+    </ClCompile>
+    <ClCompile Include="itemEffect.cpp">
+      <Filter>条件和部分效果</Filter>
+    </ClCompile>
+    <ClCompile Include="equipmentList.cpp">
+      <Filter>道具和装备</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,25 +114,34 @@
       <Filter>技能</Filter>
     </ClInclude>
     <ClInclude Include="item.h">
-      <Filter>道具</Filter>
+      <Filter>道具和装备</Filter>
     </ClInclude>
     <ClInclude Include="itemList.h">
-      <Filter>道具</Filter>
+      <Filter>道具和装备</Filter>
     </ClInclude>
     <ClInclude Include="header.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="packet.h">
-      <Filter>背包</Filter>
+      <Filter>背包和装备栏</Filter>
     </ClInclude>
     <ClInclude Include="entityList.h">
       <Filter>实体类</Filter>
     </ClInclude>
-    <ClInclude Include="condition.h">
-      <Filter>条件总汇</Filter>
-    </ClInclude>
     <ClInclude Include="equipment.h">
-      <Filter>道具</Filter>
+      <Filter>道具和装备</Filter>
+    </ClInclude>
+    <ClInclude Include="equipmentList.h">
+      <Filter>道具和装备</Filter>
+    </ClInclude>
+    <ClInclude Include="Slot.h">
+      <Filter>背包和装备栏</Filter>
+    </ClInclude>
+    <ClInclude Include="condition.h">
+      <Filter>条件和部分效果</Filter>
+    </ClInclude>
+    <ClInclude Include="itemEffect.h">
+      <Filter>条件和部分效果</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

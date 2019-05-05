@@ -1,6 +1,6 @@
 #include "equipment.h"
 
-Equipment::Equipment(const string&Name, const EType EquipmentType, const int Val, bool(*Condition)(), void(*Effect)(), const WType WeaponType)
+Equipment::Equipment(const string&Name, const EType EquipmentType, const int Val, bool(*Condition)(), void(*Effect)(Entity&self, Entity&aim), const WType WeaponType)
 	:equipmentType(EquipmentType), weaponType(WeaponType), Item(Name, false, Condition, Effect)
 {
 	switch (EquipmentType) {
@@ -73,6 +73,9 @@ int Equipment::Value() const
 			return value.def;
 			break;
 		case Other:
+			return 0;
+			break;
+		default:
 			return 0;
 			break;
 	}

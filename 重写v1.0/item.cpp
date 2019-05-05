@@ -1,4 +1,5 @@
 #include "item.h"
+#include"entityList.h"
 
 Item & Item::operator=(const Item & copy)
 {
@@ -11,9 +12,9 @@ Item & Item::operator=(const Item & copy)
 	return*this;
 }
 
-bool Item::operator==(const Item & opponent)
+bool Item::operator==(const Item & aim)
 {
-	return name == opponent.name;
+	return name == aim.name;
 }
 
 const string & Item::Name() const
@@ -26,10 +27,10 @@ bool Item::Stackable() const
 	return stackable;
 }
 
-bool Item::use() const
+bool Item::useTo(Entity&aim) const
 {
 	if (!condition())
 		return false;
-	effect();
+	effect(player, aim);
 	return true;
 }

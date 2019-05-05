@@ -4,7 +4,7 @@
 enum buff { Normal, OnFire, Undefeatable, CantTreat, Wound };//似乎不能用写在cpp里然后在这里extern的做法
 
 /* 单位 */
-class entity
+class Entity
 {
 private:
 	string name;		//名字啦
@@ -32,21 +32,21 @@ private:
 
 	string img;			//角色图像
 
-	explicit entity();	//禁用默认构造
+	explicit Entity();	//禁用默认构造
 public:
-	entity(const string&Name, const int Hp, const int Mp, const int Atk, const int Def, const int Coin, const int Lvl, const int Exp, const string Img)
+	Entity(const string&Name, const int Hp, const int Mp, const int Atk, const int Def, const int Coin, const int Lvl, const int Exp, const string Img)
 		:name(Name), hp(Hp), atk(Atk), def(Def), coin(Coin), lvl(Lvl), exp(Exp), img(Img)
 	{}
 	/* 创建相同面板不同名字的单位 */		//用于多存档与相似敌人
-	entity(const string&Name, const entity&copy)
+	Entity(const string&Name, const Entity&copy)
 		:name(Name), hp(copy.hp), atk(copy.atk), def(copy.def), coin(copy.coin), lvl(copy.lvl), exp(copy.exp), img(copy.img)
 	{}
-	entity(const entity&copy)
+	Entity(const Entity&copy)
 		:name(copy.name), hp(copy.hp), atk(copy.atk), def(copy.def), coin(copy.coin), lvl(copy.lvl), exp(copy.exp), img(copy.img)
 	{}
-	~entity() = default;
+	~Entity() = default;
 
-	entity&operator=(const entity&copy);
+	Entity&operator=(const Entity&copy);
 
 	/******************************************/
 
@@ -54,18 +54,18 @@ public:
 	const string&Name()const;
 
 	/* 重命名 */
-	entity&Rename(const string&Name);
+	Entity&Rename(const string&Name);
 
 	/* 战斗前数据初始化 */
-	entity&Init();
+	Entity&Init();
 
 	/******************************************/
 
 	/* 更新固有生命值 */
-	entity&updateHp(const int val);
+	Entity&updateHp(const int val);
 
 	/* 更新当前生命值 */
-	entity&updateCurrentHp(const int val);
+	Entity&updateCurrentHp(const int val);
 
 	/* 返回固有生命值 */
 	int Hp()const;
@@ -76,10 +76,10 @@ public:
 	/******************************************/
 
 	/* 更新固有能量值 */
-	entity&updateMp(const int val);
+	Entity&updateMp(const int val);
 
 	/* 更新当前能量值 */
-	entity&updateCurrentMp(const int val);
+	Entity&updateCurrentMp(const int val);
 
 	/* 返回固有能量值 */
 	int Mp()const;
@@ -90,10 +90,10 @@ public:
 	/******************************************/
 
 	/* 更新固有攻击力 */
-	entity&updateAtk(const int val);
+	Entity&updateAtk(const int val);
 
 	/* 更新当前攻击力 */		//一般是嗑药或者技能产生的buff
-	entity&updateCurrentAtk(const int val);
+	Entity&updateCurrentAtk(const int val);
 
 	/* 返回固有攻击力 + 武器攻击力 */
 	int Atk()const;
@@ -104,16 +104,16 @@ public:
 	/******************************************/
 
 	/* 更新固有防御力 */
-	entity&updateDef(const int val);
+	Entity&updateDef(const int val);
 
 	/* 更新当前防御力 */
-	entity&updateCurrentDef(const int val);
+	Entity&updateCurrentDef(const int val);
 
 	/* 更新当前格挡值 */
-	entity&updateCurrentBlock(const int val);
+	Entity&updateCurrentBlock(const int val);
 
 	/* 清空防御 */
-	entity&ClrBlk();
+	Entity&ClrBlk();
 
 	/* 返回固有防御力 */
 	int Def()const;
@@ -127,13 +127,13 @@ public:
 	/******************************************/
 
 	/* 获得buff */
-	entity&GetBuff(buff name, int level);
+	Entity&GetBuff(buff name, int level);
 
 	/* 回合结束时更新buff表 */
-	entity&updateBuffListOnTurnEnd();
+	Entity&updateBuffListOnTurnEnd();
 
 	/* 一次行动结束时更新buff表 */
-	entity&updateBuffListOnActionEnd();
+	Entity&updateBuffListOnActionEnd();
 
 	/* 检索buff */
 	bool findBuff(buff name)const;
@@ -141,7 +141,7 @@ public:
 	/******************************************/
 
 	/* 更新金币数 */
-	entity&updateCoin(const int inc);
+	Entity&updateCoin(const int inc);
 
 	/* 显示金币数 */
 	int Coin()const;
@@ -149,7 +149,7 @@ public:
 	/******************************************/
 
 	/* 更新经验值 */
-	entity&updateExp(const int val);
+	Entity&updateExp(const int val);
 
 	/* 显示经验值 */
 	int Exp()const;
@@ -157,7 +157,7 @@ public:
 	/******************************************/
 
 	/* 更新等级 */
-	entity&lvlUp();
+	Entity&lvlUp();
 
 	/* 返回等级 */
 	int Lvl()const;

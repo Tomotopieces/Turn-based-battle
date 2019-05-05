@@ -8,7 +8,7 @@ void Packet::sortPacket()
 	for (auto it = blocks.begin(); it != blocks.end(); ++it) {
 		if (0 == it->quantity) {
 			blocks.erase(it);
-			blocks.push_back({ Empty,0 });
+			blocks.push_back({ itemLack,0 });
 			it--;
 		}
 	}
@@ -16,7 +16,7 @@ void Packet::sortPacket()
 
 Packet::Packet()
 {
-	blocks.resize(20, { Empty,0 });
+	blocks.resize(20, { itemLack,0 });
 }
 
 const Packet::block & Packet::operator[](int n)
@@ -24,17 +24,17 @@ const Packet::block & Packet::operator[](int n)
 	return blocks[n];
 }
 
-bool Packet::get(Item & opponent, int&quantity)
+bool Packet::get(Item & aim, int&quantity)
 {
 	for (auto it = blocks.begin(); it != blocks.end(); ++it) {
 		//若该格为空
-		if (it->item == Empty) {
-			it->item = opponent;
+		if (it->item == itemLack) {
+			it->item = aim;
 			it->quantity = quantity;
 			return true;
 		}
 		//若存在同名道具
-		else if (it->item == opponent) {
+		else if (it->item == aim) {
 			//若该道具可叠加
 			if (it->item.Stackable()) {
 				//若该格的道具数量小于64
@@ -62,16 +62,16 @@ bool Packet::get(Item & opponent, int&quantity)
 	return false;
 }
 
-bool Packet::drop(Item & opponent, unsigned int quantity)
+bool Packet::drop(Item & aim, unsigned int quantity)
 {
 	for (auto it = blocks.begin(); it != blocks.end(); ++it) {
 		//若该格为空（说明无更多道具）
-		if (it->item == Empty) {
+		if (it->item == itemLack) {
 			//丢弃失败
 			return false;
 		}
 		//若找到同名道具
-		if (it->item == opponent) {
+		if (it->item == aim) {
 			//若数量正确
 			if (it->quantity >= quantity) {
 				it->quantity -= quantity;
@@ -88,9 +88,9 @@ bool Packet::drop(Item & opponent, unsigned int quantity)
 	return false;
 }
 
-bool Packet::block::use()
+bool Packet::block::useTo(Entity&aim)
 {
-	if (item.use()) {
+	if (item.useTo(aim)) {
 		quantity--;
 		if (0 == quantity) {
 			packet.sortPacket();

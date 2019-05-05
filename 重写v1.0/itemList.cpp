@@ -1,31 +1,26 @@
 #include "itemList.h"
-#include"entityList.h"
 
-void NOEFFECT()
+void LIFEPOTION(Entity&self, Entity&aim)
 {
-}
-
-void LIFEPOTION()
-{
-	if (player.CurrentHp() + 3 < player.Hp())
-		player.updateCurrentHp(player.CurrentHp() + 3);
+	if (aim.CurrentHp() + 3 < aim.Hp())
+		aim.updateCurrentHp(aim.CurrentHp() + 3);
 	else
-		player.updateCurrentHp(player.Hp());
+		aim.updateCurrentHp(aim.Hp());
 }
 
-void ENERGYPOTION()
+void ENERGYPOTION(Entity&self, Entity&aim)
 {
-	if (player.CurrentMp() + 5 < player.Mp())
-		player.updateCurrentMp(player.CurrentMp() + 5);
+	if (aim.CurrentMp() + 5 < aim.Mp())
+		aim.updateCurrentMp(aim.CurrentMp() + 5);
 	else
-		player.updateCurrentMp(player.Mp());
+		aim.updateCurrentMp(aim.Mp());
 }
 
-void POWERPOTION()
+void POWERPOTION(Entity&self, Entity&aim)
 {
 	//×î´ó¹¥»÷Á¦999
-	if (player.CurrentAtk() + 1 < 999)
-		player.updateCurrentAtk(player.CurrentAtk() + 1);
+	if (aim.CurrentAtk() + 1 < 999)
+		aim.updateCurrentAtk(aim.CurrentAtk() + 1);
 	else
-		player.updateCurrentAtk(999);
+		aim.updateCurrentAtk(999);
 }

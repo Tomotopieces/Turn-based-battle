@@ -11,7 +11,7 @@ public:
 		Item item;
 		unsigned int quantity;
 
-		bool use();
+		bool useTo(Entity&aim);
 	};
 	friend struct block;
 private:
@@ -27,17 +27,10 @@ public:
 	const block&operator[](int n);
 
 	/* 获得物品 */
-	bool get(Item&opponent, int&quantity);
+	bool get(Item&aim, int&quantity);
 
 	/* 丢弃物品 */
-	bool drop(Item&opponent, unsigned int quantity);
+	bool drop(Item&aim, unsigned int quantity);
 };
 
 extern Packet packet;
-
-/* 装备槽 */
-class Slot
-{
-private:
-
-};

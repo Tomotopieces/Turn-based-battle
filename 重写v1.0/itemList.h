@@ -1,15 +1,16 @@
 #pragma once
 #include"item.h"
 #include"condition.h"
+#include"itemEffect.h"
 
-void NOEFFECT();
-const Item Empty("", false, NOCONDITION, NOEFFECT);
 
-void LIFEPOTION();
+const Item itemLack("", false, NOCONDITION, NOEFFECT);
+
+void LIFEPOTION(Entity&self, Entity&aim);
 const Item LifePotion("生命药水", true, CANTREAT, LIFEPOTION);
 
-void ENERGYPOTION();
+void ENERGYPOTION(Entity&self, Entity&aim);
 const Item EnergyPotion("能量药水", true, NOCONDITION, ENERGYPOTION);
 
-void POWERPOTION();
+void POWERPOTION(Entity&self, Entity&aim);
 const Item PowerPotion("力量药水", true, NOCONDITION, ENERGYPOTION);

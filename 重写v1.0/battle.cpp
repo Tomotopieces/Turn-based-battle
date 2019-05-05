@@ -2,7 +2,7 @@
 #include"BaseFeature.h"
 #include"entityList.h"
 
-void BattleUI::printEntity(const entity & unit, int x, int y)
+void BattleUI::printEntity(const Entity & unit, int x, int y)
 {
 	Cursor.set(x, y);
 	for (int i = 0; i < unit.Img().size(); ++i) {

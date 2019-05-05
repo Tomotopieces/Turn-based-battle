@@ -118,6 +118,8 @@
     <ClCompile Include="BaseFeature.cpp" />
     <ClCompile Include="battle.cpp" />
     <ClCompile Include="condition.cpp" />
+    <ClCompile Include="equipmentList.cpp" />
+    <ClCompile Include="itemEffect.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="entityList.cpp" />
     <ClCompile Include="equipment.cpp" />
@@ -128,15 +130,18 @@
     <ClCompile Include="packet.cpp" />
     <ClCompile Include="skill.cpp" />
     <ClCompile Include="skillList.cpp" />
+    <ClCompile Include="Slot.cpp" />
     <ClCompile Include="SysFeature.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseFeature.h" />
     <ClInclude Include="battle.h" />
     <ClInclude Include="condition.h" />
+    <ClInclude Include="itemEffect.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="entityList.h" />
     <ClInclude Include="equipment.h" />
+    <ClInclude Include="equipmentList.h" />
     <ClInclude Include="GameFeature.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="item.h" />
@@ -144,6 +149,7 @@
     <ClInclude Include="packet.h" />
     <ClInclude Include="skill.h" />
     <ClInclude Include="skillList.h" />
+    <ClInclude Include="Slot.h" />
     <ClInclude Include="SysFeature.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

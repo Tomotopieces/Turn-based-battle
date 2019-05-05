@@ -1,7 +1,7 @@
 #pragma once
-#include "entity.h"
+#include "Entity.h"
 
-extern entity proto;
-extern entity player;
-extern entity enemys[];
-extern entity enemy;
+extern Entity proto;
+extern Entity player;
+extern Entity enemys[];
+extern Entity enemy;

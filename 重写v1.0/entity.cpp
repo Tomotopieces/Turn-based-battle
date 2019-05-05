@@ -1,7 +1,7 @@
-#include "entity.h"
+#include "Entity.h"
 #include"entityList.h"
 
-entity & entity::operator=(const entity & copy)
+Entity & Entity::operator=(const Entity & copy)
 {
 	if (&copy == this)
 		return*this;
@@ -16,18 +16,18 @@ entity & entity::operator=(const entity & copy)
 	return*this;
 }
 
-const string & entity::Name() const
+const string & Entity::Name() const
 {
 	return name;
 }
 
-entity & entity::Rename(const string & Name)
+Entity & Entity::Rename(const string & Name)
 {
 	name = Name;
 	return *this;
 }
 
-entity & entity::Init()
+Entity & Entity::Init()
 {
 	currentHp = hp;
 	currentAtk = atk/* + weapon.atk */;
@@ -35,118 +35,118 @@ entity & entity::Init()
 	return*this;
 }
 
-entity & entity::updateHp(const int val)
+Entity & Entity::updateHp(const int val)
 {
 	hp = val;
 	return *this;
 }
 
-entity & entity::updateCurrentHp(const int val)
+Entity & Entity::updateCurrentHp(const int val)
 {
 	currentHp = val;
 	return *this;
 }
 
-int entity::Hp() const
+int Entity::Hp() const
 {
 	return hp;
 }
 
-int entity::CurrentHp() const
+int Entity::CurrentHp() const
 {
 	return currentHp;
 }
 
-entity & entity::updateMp(const int val)
+Entity & Entity::updateMp(const int val)
 {
 	mp = val;
 	return *this;
 }
 
-entity & entity::updateCurrentMp(const int val)
+Entity & Entity::updateCurrentMp(const int val)
 {
 	currentMp = val;
 	return *this;
 }
 
-int entity::Mp() const
+int Entity::Mp() const
 {
 	return mp;
 }
 
-int entity::CurrentMp() const
+int Entity::CurrentMp() const
 {
 	return currentMp;
 }
 
-entity & entity::updateAtk(const int val)
+Entity & Entity::updateAtk(const int val)
 {
 	atk = val;
 	return *this;
 }
 
-entity & entity::updateCurrentAtk(const int val)
+Entity & Entity::updateCurrentAtk(const int val)
 {
 	currentAtk = val;
 	return *this;
 }
 
-int entity::Atk() const
+int Entity::Atk() const
 {
 	return atk;
 }
 
-int entity::CurrentAtk() const
+int Entity::CurrentAtk() const
 {
 	return currentAtk;
 }
 
-entity & entity::updateDef(const int val)
+Entity & Entity::updateDef(const int val)
 {
 	def = val;
 	return*this;
 }
 
-entity & entity::updateCurrentDef(const int val)
+Entity & Entity::updateCurrentDef(const int val)
 {
 	currentDef = val;
 	return*this;
 }
 
-entity & entity::updateCurrentBlock(const int val)
+Entity & Entity::updateCurrentBlock(const int val)
 {
 	currentBlock = val;
 	return*this;
 }
 
-entity & entity::ClrBlk()
+Entity & Entity::ClrBlk()
 {
 	currentBlock = 0;
 	return*this;
 }
 
-int entity::Def() const
+int Entity::Def() const
 {
 	return def;
 }
 
-int entity::CurrentDef() const
+int Entity::CurrentDef() const
 {
 	return currentDef;
 }
 
-int entity::CurrentBlock() const
+int Entity::CurrentBlock() const
 {
 	return currentBlock;
 }
 
-entity & entity::GetBuff(buff name, int level)
+Entity & Entity::GetBuff(buff name, int level)
 {
 	buffList.push_back({ name,level });
 	return*this;
 }
 
-entity & entity::updateBuffListOnTurnEnd()
+Entity & Entity::updateBuffListOnTurnEnd()
 {
 	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
 		switch (it->name) {
@@ -161,7 +161,7 @@ entity & entity::updateBuffListOnTurnEnd()
 	return*this;
 }
 
-entity & entity::updateBuffListOnActionEnd()
+Entity & Entity::updateBuffListOnActionEnd()
 {
 	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
 		switch (it->name) {
@@ -182,7 +182,7 @@ entity & entity::updateBuffListOnActionEnd()
 	return*this;
 }
 
-bool entity::findBuff(buff name) const
+bool Entity::findBuff(buff name) const
 {
 	for (auto it = buffList.begin(); it != buffList.end(); ++it) {
 		if (name == it->name)
@@ -191,40 +191,40 @@ bool entity::findBuff(buff name) const
 	return false;
 }
 
-entity & entity::updateCoin(const int inc)
+Entity & Entity::updateCoin(const int inc)
 {
 	coin += inc;
 	return*this;
 }
 
-int entity::Coin() const
+int Entity::Coin() const
 {
 	return coin;
 }
 
-entity & entity::updateExp(const int val)
+Entity & Entity::updateExp(const int val)
 {
 	exp = val;
 	return*this;
 }
 
-int entity::Exp() const
+int Entity::Exp() const
 {
 	return exp;
 }
 
-entity & entity::lvlUp()
+Entity & Entity::lvlUp()
 {
 	lvl++;
 	return*this;
 }
 
-int entity::Lvl() const
+int Entity::Lvl() const
 {
 	return lvl;
 }
 
-int entity::MaxExp() const
+int Entity::MaxExp() const
 {
 	int ME = 20;
 	for (int i = 1; i < lvl; ++i) {
@@ -233,7 +233,7 @@ int entity::MaxExp() const
 	return ME;
 }
 
-const string & entity::Img() const
+const string & Entity::Img() const
 {
 	return img;
 }

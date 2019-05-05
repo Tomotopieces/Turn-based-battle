@@ -1,7 +1,7 @@
 #include"skill.h"
 #include"entityList.h"
 
-Skill::Skill(const char* Name, ST Type, int Val, int Energy, bool(*Condition)(), void(*Effect)())
+Skill::Skill(const char* Name, ST Type, int Val, int Energy, bool(*Condition)(), void(*Effect)(Entity&, Entity&aim))
 	:name(string(Name)), type(Type), energy(Energy), condition(Condition), effect(Effect)
 {
 	switch (type) {
@@ -113,6 +113,6 @@ bool Skill::use()const
 	if (player.CurrentMp() < energy)
 		return false;//此处为    使用失败    而不是无法使用
 	player.updateCurrentMp(player.CurrentMp() - energy);
-	effect();
+	effect(player, enemy);
 	return true;
 }

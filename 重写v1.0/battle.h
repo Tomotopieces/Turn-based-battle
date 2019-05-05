@@ -8,7 +8,7 @@ void battle();
 namespace BattleUI {
 
 	/* 打印实体 */
-	void printEntity(const entity&unit, int x, int y);
+	void printEntity(const Entity&unit, int x, int y);
 
 	/* 打印选择框 */
 	void printBox();
