@@ -10,6 +10,8 @@ public:
 	Slot();
 	~Slot() = default;
 
+	/******************************************/
+
 	/* ÎäÆ÷²Û */
 	Equipment&weaponSlot();
 

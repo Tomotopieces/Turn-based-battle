@@ -90,6 +90,9 @@
     <ClCompile Include="equipmentList.cpp">
       <Filter>道具和装备</Filter>
     </ClCompile>
+    <ClCompile Include="buff.cpp">
+      <Filter>条件和部分效果</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h">
@@ -141,6 +144,9 @@
       <Filter>条件和部分效果</Filter>
     </ClInclude>
     <ClInclude Include="itemEffect.h">
+      <Filter>条件和部分效果</Filter>
+    </ClInclude>
+    <ClInclude Include="buff.h">
       <Filter>条件和部分效果</Filter>
     </ClInclude>
   </ItemGroup>

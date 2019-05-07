@@ -119,7 +119,7 @@ Entity & Entity::updateCurrentBlock(const int val)
 	return*this;
 }
 
-Entity & Entity::ClrBlk()
+Entity & Entity::clearBlock()
 {
 	currentBlock = 0;
 	return*this;
@@ -142,6 +142,18 @@ int Entity::CurrentBlock() const
 
 Entity & Entity::GetBuff(buff name, int level)
 {
+	if (0 == level) {
+		if (findBuff(name)) {
+			for (auto it = buffList.begin(); it != buffList.end(); ++it) {
+				if (name == it->name) {
+					buffList.erase(it);
+					return*this;
+				}
+			}
+		}
+		else
+			return*this;
+	}
 	buffList.push_back({ name,level });
 	return*this;
 }

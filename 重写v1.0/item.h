@@ -1,5 +1,4 @@
 #pragma once
-#include"header.h"
 #include"entity.h"
 
 /* µÀ¾ß */

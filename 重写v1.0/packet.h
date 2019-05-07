@@ -23,6 +23,8 @@ public:
 	Packet();
 	~Packet() = default;
 
+	/******************************************/
+
 	/* ¶¨Î» */
 	const block&operator[](int n);
 

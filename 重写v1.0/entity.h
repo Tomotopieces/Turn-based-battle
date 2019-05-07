@@ -18,11 +18,8 @@ private:
 	int def;			//固有防御力
 	int currentDef = 0;		//当前防御力
 	int currentBlock = 0;		//格挡值
-	struct Buff
-	{
-		buff name;
-		int level;
-	};
+
+	friend class Buff;
 	vector<Buff>buffList;	//buff表
 
 	int coin;			//金币
@@ -112,8 +109,8 @@ public:
 	/* 更新当前格挡值 */
 	Entity&updateCurrentBlock(const int val);
 
-	/* 清空防御 */
-	Entity&ClrBlk();
+	/* 清空格挡 */
+	Entity&clearBlock();
 
 	/* 返回固有防御力 */
 	int Def()const;

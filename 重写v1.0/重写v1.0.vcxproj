@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="BaseFeature.cpp" />
     <ClCompile Include="battle.cpp" />
+    <ClCompile Include="buff.cpp" />
     <ClCompile Include="condition.cpp" />
     <ClCompile Include="equipmentList.cpp" />
     <ClCompile Include="itemEffect.cpp" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="BaseFeature.h" />
     <ClInclude Include="battle.h" />
+    <ClInclude Include="buff.h" />
     <ClInclude Include="condition.h" />
     <ClInclude Include="itemEffect.h" />
     <ClInclude Include="entity.h" />
