@@ -2,6 +2,10 @@
 #include"header.h"
 #include"Entity.h"
 
+/*
+	增益与减益
+*/
+
 class Buff
 {
 private:
@@ -48,4 +52,7 @@ public:
 	Buff&trigger(Entity&aim);
 	//特殊状态对对手起效，例如荆棘反伤，同时指定效果源和效果对象
 	Buff&trigger(Entity&self, Entity&aim);
+
+	/* 同名Buff */
+	bool operator==(const Buff&aim);
 };

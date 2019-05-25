@@ -1,19 +1,20 @@
 #pragma once
+#include"header.h"
 #include"Entity.h"
-#include"Buff.h"
+#include"BuffList.h"
 
 struct Team
 {
-	std::vector<Entity>EntityList;
-	std::vector<Buff>BuffList;
+	std::vector<Entity>members;
+	std::vector<BuffList>buffLists;
 };
 
 //玩家队伍
-extern std::vector<Team>playerTeam;
+extern Team playerTeam;
 //当前玩家队伍
-extern std::vector<Team>currentPlayerTeam;
+extern Team curentPlayerTeam;
 
 //敌人队伍
-extern std::vector<Team>EnemyTeam;				//这个可能可以写很多种固定搭配？
+extern Team enemyTeam;
 //当前敌人队伍
-extern std::vector<Team>currentEnemyTeam;
+extern Team currentEnemyTeam;

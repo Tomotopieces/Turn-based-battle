@@ -32,3 +32,8 @@ Buff & Buff::trigger(Entity & self, Entity & aim)
 	effect(self, aim);
 	return*this;
 }
+
+bool Buff::operator==(const Buff & aim)
+{
+	return name == aim.name;
+}

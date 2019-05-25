@@ -25,6 +25,9 @@
     <Filter Include="队伍">
       <UniqueIdentifier>{b64d4d17-7d3b-4885-8a76-87cd115dcd86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="道具">
+      <UniqueIdentifier>{2fbd8d9d-e2b6-4ea0-ad41-4caeb99d90a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
