@@ -19,9 +19,6 @@ private:
 	int currentDef = 0;		//当前防御力
 	int currentBlock = 0;		//格挡值
 
-	friend class Buff;
-	vector<Buff>buffList;	//buff表
-
 	int coin;			//金币
 	int lvl;			//等级
 	int exp;			//目前经验

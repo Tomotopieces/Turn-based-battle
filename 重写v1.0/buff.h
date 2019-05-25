@@ -11,7 +11,7 @@ private:
 
 	explicit Buff();
 public:
-	Buff(const string & Name, const bool Stackable, void(*Effect)(Entity &self, Entity &aim))
+	Buff(const string & Name, const bool Stackable, void(*Effect)(Entity &self, Entity &aim), void(*Update)())
 		:name(Name), stackable(Stackable), effect(Effect)
 	{
 	}
@@ -22,4 +22,21 @@ public:
 	~Buff() = default;
 
 	Buff&operator=(const Buff&copy);
+
+	/******************************************/
+	/* 返回数据 */
+
+	const string&Name();
+
+	bool Stackable();
+
+	int Level();
+
+	/******************************************/
+
+	/* 更新状态等级 */
+	Buff&update(int Level);
+
+	/* 触发 */
+	Buff&trigger(Entity&self, Entity&aim);
 };

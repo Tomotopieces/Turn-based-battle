@@ -37,6 +37,9 @@
     <Filter Include="条件和部分效果">
       <UniqueIdentifier>{26a33d82-3125-4e1c-af7c-d6ce6b28c6d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="状态效果">
+      <UniqueIdentifier>{ac98675f-43bf-4910-ac2b-d3f7342eeb2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -91,7 +94,7 @@
       <Filter>道具和装备</Filter>
     </ClCompile>
     <ClCompile Include="buff.cpp">
-      <Filter>条件和部分效果</Filter>
+      <Filter>状态效果</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +150,10 @@
       <Filter>条件和部分效果</Filter>
     </ClInclude>
     <ClInclude Include="buff.h">
-      <Filter>条件和部分效果</Filter>
+      <Filter>状态效果</Filter>
+    </ClInclude>
+    <ClInclude Include="buffEffectList.h">
+      <Filter>状态效果</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

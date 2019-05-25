@@ -25,15 +25,15 @@ public:
 
 	/******************************************/
 
-	/* 对比物品 */
+	/* 同名判断 */
 	bool operator==(const Item&aim);
 
-	/* 返回名字 */
+	/* 返回数据 */
+
 	const string&Name()const;
 
-	/* 返回是否可叠加 */
 	bool Stackable()const;
 
-	/* 使用道具 */		//道具可能有使用条件，故分与效果开写
+	//道具可能有使用条件，故分与效果开写
 	bool useTo(Entity&aim)const;
 };
