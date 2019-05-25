@@ -19,6 +19,12 @@
     <Filter Include="实体">
       <UniqueIdentifier>{a00cb475-3f50-40ee-b033-61d4655f382a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="增益">
+      <UniqueIdentifier>{d4ec6a6d-d4d8-4e0b-900a-b351ece67e74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="队伍">
+      <UniqueIdentifier>{b64d4d17-7d3b-4885-8a76-87cd115dcd86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -30,6 +36,21 @@
     <ClInclude Include="Entity.h">
       <Filter>实体</Filter>
     </ClInclude>
+    <ClInclude Include="EntityList.h">
+      <Filter>实体</Filter>
+    </ClInclude>
+    <ClInclude Include="Buff.h">
+      <Filter>增益</Filter>
+    </ClInclude>
+    <ClInclude Include="BuffList.h">
+      <Filter>增益</Filter>
+    </ClInclude>
+    <ClInclude Include="BuffEffectList.h">
+      <Filter>增益</Filter>
+    </ClInclude>
+    <ClInclude Include="Team.h">
+      <Filter>队伍</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SysFeature.cpp">
@@ -37,6 +58,24 @@
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>实体</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityList.cpp">
+      <Filter>实体</Filter>
+    </ClCompile>
+    <ClCompile Include="Buff.cpp">
+      <Filter>增益</Filter>
+    </ClCompile>
+    <ClCompile Include="BuffList.cpp">
+      <Filter>增益</Filter>
+    </ClCompile>
+    <ClCompile Include="BuffEffectList.cpp">
+      <Filter>增益</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Team.cpp">
+      <Filter>队伍</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
